@@ -1,6 +1,5 @@
 /* maxWith 800, maxHeight 600 */
 
-
 html {
 	font-family: "Lora", sans-serif;
 	max-width: 800px;
@@ -13,8 +12,16 @@ body {
 	max-height: 600px;
 }
 
+#plexusTitle {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 15px;
+	font-size: 15px;
+	color: #fb7272;
+}
+
 #container {
-	height:400px;
+	height: 400px;
 	overflow: auto;
 }
 
