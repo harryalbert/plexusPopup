@@ -1,0 +1,39 @@
+/* maxWith 800, maxHeight 600 */
+
+
+html {
+	font-family: "Lora", sans-serif;
+	max-width: 800px;
+	max-height: 600px;
+}
+
+body {
+	min-width: 800px;
+	max-width: 800px;
+	max-height: 600px;
+}
+
+#container {
+	height:400px;
+	overflow: auto;
+}
+
+#editor {
+	border: none !important;
+	padding: 10px 15px !important;
+}
+
+.ql-editor {
+	padding: 0px !important;
+}
+
+.ql-container {
+	overflow-y: visible;
+	height: 400px !important;
+	width: 98% !important;
+	padding: 12px 0px !important;
+}
+
+.ql-toolbar {
+	width: 98% !important;
+}
