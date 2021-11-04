@@ -21,15 +21,10 @@ body {
 	color: #fb7272;
 }
 
-#container {
-	max-height: 400px;
-	overflow: auto;
-}
-
 /******* Custom quill css *******/
 .ql-container {
-	overflow-y: visible;
-	/* height: 400px !important; */
+	overflow: auto;
+	max-height: 400px;
 	width: 98% !important;
 	padding: 12px 0px !important;
 }
@@ -41,4 +36,9 @@ body {
 
 .ql-editor {
 	padding: 0px !important;
+	min-height: 150px;
+}
+
+.ql-editor.ql-blank::before {
+	left: 12px !important;
 }
