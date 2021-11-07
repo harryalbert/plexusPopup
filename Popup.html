@@ -10,10 +10,12 @@
 		<link href="quill.css" rel="stylesheet" />
 		<script src="js/quill.js"></script>
 	</head>
-	<body>
+	<body style="overflow-y:scroll; max-height: 300px;">
 		<h1 id="plexusTitle">Plexus</h1>
-			<div id="editor"></div>
-			<button id="submitButton" class="horizontalAlign">Submit</button>
+		<div id="editor"></div>
+		<button id="submitButton" class="horizontalAlign">Submit</button>
+		<div id="storedNotes"></div>
+
 		<script src="js/storageMethods.js"></script>
 		<script src="js/quillMethods.js"></script>
 		<script src="js/popup.js"></script>

@@ -23,7 +23,7 @@ function loadListeners() {
 function main() {
 	chrome.storage.sync.get(["currentNote", "previousNotes"], function (items) {
 		previousNotes = items.previousNotes ? items.previousNotes : {}; //load previously saved notes
-		console.log(previousNotes);
+		loadStoredNotes(previousNotes);
 
 		loadQuill(items.currentNote);
 		loadListeners();

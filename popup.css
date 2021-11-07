@@ -21,16 +21,11 @@ body {
 	color: #fb7272;
 }
 
-.horizontalAlign {
-	margin: 0;
-	position: absolute;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, 0%);
-}
-
 #submitButton {
 	margin-top: 5px;
+	margin-left: 43%;
+	margin-bottom: 5px;
+
 	padding: 5px 5px 3px 5px;
 	background-color: #fb7272;
 	color: white;
@@ -39,13 +34,17 @@ body {
 	border-radius: 5px;
 }
 
-#submitButton:hover{
+#submitButton:hover {
 	cursor: pointer;
 }
 
-#submitButton:active{
+#submitButton:active {
 	background-color: rgb(231, 94, 94);
 	border: black solid 1px;
+}
+
+#storedNotes {
+	overflow-y: scroll;
 }
 
 /******* Custom quill css *******/
@@ -64,7 +63,7 @@ body {
 
 .ql-editor {
 	padding: 0px !important;
-	min-height: 150px;
+	/* min-height: 150px; */
 }
 
 .ql-editor.ql-blank::before {
