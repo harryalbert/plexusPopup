@@ -11,6 +11,7 @@ body {
 	max-width: 400px;
 	max-height: 600px;
 	margin-left: 0px !important;
+	overflow-y: scroll;
 }
 
 #plexusTitle {
@@ -45,6 +46,7 @@ body {
 
 #storedNotes {
 	overflow-y: scroll;
+	max-height: 300px;
 }
 
 /******* Custom quill css *******/
