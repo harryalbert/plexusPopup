@@ -52,9 +52,9 @@ body {
 /******* Custom quill css *******/
 .ql-container {
 	overflow: auto;
-	max-height: 400px;
+	max-height: 200px;
 	width: 98% !important;
-	padding: 12px 0px !important;
+	/* padding: 12px 0px !important; */
 }
 
 #editor {

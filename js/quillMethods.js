@@ -8,6 +8,8 @@ function loadQuill(note) {
 		},
 	});
 
+	quill.container.style.height = "200px";
+	quill.container.style.padding = "12px 0px";
 	if (note) quill.insertText(0, note.trim());
 }
 
@@ -31,6 +33,7 @@ function loadStoredNotes(notes) {
 			readOnly: true
 		});
 
+		storedNote.container.style.margin = "0px 5px";
 		storedNote.insertText(0, note.note);
 	}
 }
