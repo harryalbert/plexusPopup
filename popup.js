@@ -8,11 +8,16 @@ function saveCurrentNote(note) {
 
 //save current note to stored notes
 function storeCurrentNote(note) {
-	//using current seconds as key for note
-	previousNotes[(Date.now() / 1000) | 0] = note;
-	chrome.storage.sync.set({previousNotes}, () => {});
+	chrome.tabs.query({active: true, lastFocusedWindow: true}, (tabs) => {
+		let url = tabs[0].hasOwnProperty('url') ? tabs[0].url : null;
 
-	quill.setContents([{insert: "\n"}]);
+		//using current seconds as key for note
+		previousNotes[(Date.now() / 1000) | 0] = {note: note, url: url};
+		chrome.storage.sync.set({previousNotes}, () => {});
+
+		quill.setContents([{insert: "\n"}]);
+		window.close();
+	});
 }
 
 //load quill editor (and insert notes if necessary)
@@ -41,7 +46,8 @@ function loadListeners() {
 	}, 5000);
 
 	document.getElementById("submitButton").onclick = () => {
-		storeCurrentNote(quill.getText());
+		if (quill.getText().trim()) storeCurrentNote(quill.getText());
+		else console.log('not good');
 	};
 }
 
@@ -49,6 +55,7 @@ function loadListeners() {
 function main() {
 	chrome.storage.sync.get(["currentNote", "previousNotes"], function (items) {
 		previousNotes = items.previousNotes ? items.previousNotes : {}; //load previously saved notes
+		console.log(previousNotes);
 
 		loadQuill(items.currentNote);
 		loadListeners();

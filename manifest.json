@@ -7,5 +7,5 @@
 		"default_title": "Plexus",
 		"default_icon": "plexus_favicon.png"
 	},
-	"permissions": ["storage"]
+	"permissions": ["storage", "tabs"]
 }

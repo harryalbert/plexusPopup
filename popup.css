@@ -15,7 +15,7 @@ body {
 
 #plexusTitle {
 	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 	padding-left: 15px;
 	font-size: 15px;
 	color: #fb7272;
@@ -59,6 +59,7 @@ body {
 #editor {
 	padding: 10px !important;
 	margin: 0px 5px !important;
+	border-radius: 5px;
 }
 
 .ql-editor {
