@@ -1,5 +1,6 @@
 var quill;
 var previousNotes = {};
+const maxStoredNotes = 10;
 
 function loadListeners() {
 	//save note on space or enter
@@ -14,8 +15,11 @@ function loadListeners() {
 	}, 5000);
 
 	document.getElementById("submitButton").onclick = () => {
-		if (quill.getText().trim()) storeCurrentNote(quill.getText());
-		else console.log('not good');
+		storeCurrentNote(quill.getText());
+	};
+
+	document.onkeydown = (e) => {
+		if (e.code == "Space" && e.ctrlKey) storeCurrentNote(quill.getText());
 	};
 }
 

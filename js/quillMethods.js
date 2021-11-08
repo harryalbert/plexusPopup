@@ -19,7 +19,6 @@ function loadStoredNotes(notes) {
 	const keys = Object.keys(notes);
 	for (let i = keys.length - 1; i >= 0; i--) {
 		let key = keys[i];
-		console.log(key);
 		let note = notes[key];
 
 		let title = document.createElement("h1");
