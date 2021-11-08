@@ -15,9 +15,17 @@ function loadQuill(note) {
 
 function loadStoredNotes(notes) {
 	let div = document.getElementById("storedNotes");
-	for (let key in notes) {
+
+	const keys = Object.keys(notes);
+	for (let i = keys.length - 1; i >= 0; i--) {
+		let key = keys[i];
 		console.log(key);
 		let note = notes[key];
+
+		let title = document.createElement("h1");
+		title.classList = "title storedNoteTitle";
+		title.innerHTML = toDateTime(key).toDateString();
+		div.appendChild(title);
 
 		//create div for new quill element
 		let newEditor = document.createElement("div");
@@ -30,10 +38,17 @@ function loadStoredNotes(notes) {
 			modules: {
 				toolbar: false,
 			},
-			readOnly: true
+			readOnly: true,
 		});
 
-		storedNote.container.style.margin = "0px 5px";
-		storedNote.insertText(0, note.note);
+		storedNote.container.style.margin = "5px";
+		storedNote.insertText(0, note.note.trim());
 	}
+}
+
+//convet seconds key to date
+function toDateTime(secs) {
+	var t = new Date(1970, 0, 1); // Epoch
+	t.setSeconds(secs);
+	return t;
 }
