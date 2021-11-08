@@ -7,5 +7,12 @@
 		"default_title": "Plexus",
 		"default_icon": "plexus_favicon.png"
 	},
+	"icons": {
+		"128": "plexus_favicon.png",
+		"64": "plexus_favicon.png",
+		"48": "plexus_favicon.png",
+		"32": "plexus_favicon.png",
+		"16": "plexus_favicon.png"
+	},
 	"permissions": ["storage", "tabs"]
 }
