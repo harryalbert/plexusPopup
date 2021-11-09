@@ -58,15 +58,18 @@ body {
 
 #storedNotes {
 	overflow-y: scroll;
-	max-height: 334px;
+	max-height: 339px;
 	padding: 0px 5px;
+	border: solid 1px rgb(230, 230, 230);
+	margin: 3px;
+	border-radius: 10px;
 }
 
 .horizontalLine {
 	width: 85%;
 	height: 1px;
 	background-color: rgb(230, 230, 230);
-	border: none;	
+	border: none;
 	text-align: center;
 }
 
