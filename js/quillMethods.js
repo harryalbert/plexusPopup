@@ -13,6 +13,8 @@ function loadQuill(note) {
 	if (note) quill.insertText(0, note.trim());
 }
 
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 function loadStoredNotes(notes) {
 	let div = document.getElementById("storedNotes");
 	let currentDate = new Date();
@@ -27,7 +29,7 @@ function loadStoredNotes(notes) {
 		console.log(date);
 
 		if (date.toDateString() == currentDate.toDateString()) dateString = formatAMPM(date);
-		else dateString = date.toDateString();
+		else dateString = days[date.getDay()] + " " + months[date.getMonth()] + " " + date.getDate();
 
 		let title = document.createElement("h1");
 		title.classList = "title storedNoteTitle";
