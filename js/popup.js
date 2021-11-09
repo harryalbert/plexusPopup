@@ -1,6 +1,6 @@
 var quill;
 var previousNotes = {};
-const maxStoredNotes = 10;
+// const maxStoredNotes = 10;
 
 function loadListeners() {
 	//save note on space or enter

@@ -18,12 +18,12 @@ async function storeCurrentNote(note) {
 		previousNotes[(Date.now() / 1000) | 0] = {note: note, url: url};
 
 		//make sure keys don't overflow
-		const keys = Object.keys(previousNotes);
-		if (keys.length > maxStoredNotes){
-			for (let i = 0; i < keys.length - maxStoredNotes; i++){
-				delete previousNotes[keys[i]];
-			}
-		}
+		// const keys = Object.keys(previousNotes);
+		// if (keys.length > maxStoredNotes){
+		// 	for (let i = 0; i < keys.length - maxStoredNotes; i++){
+		// 		delete previousNotes[keys[i]];
+		// 	}
+		// }
 
 		chrome.storage.sync.set({previousNotes}, () => {});
 		window.close();
