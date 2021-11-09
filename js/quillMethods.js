@@ -36,6 +36,28 @@ const months = [
 	"November",
 	"December",
 ];
+function formatDate(key, currentDate) {
+	//get formated date
+	let dateString = "";
+	let date = toDateTime(key);
+	if (date.toDateString() == currentDate.toDateString())
+		dateString = formatAMPM(date);
+	else if (
+		date.getYear() == currentDate.getYear() &&
+		date.getWeekNumber() == currentDate.getWeekNumber()
+	) {
+		dateString = days[date.getDay()] + " " + formatAMPM(date);
+	} else
+		dateString =
+			days[date.getDay()] +
+			" " +
+			months[date.getMonth()] +
+			" " +
+			date.getDate();
+
+	return dateString;
+}
+
 function loadStoredNotes(notes) {
 	let div = document.getElementById("storedNotes");
 	let currentDate = new Date();
@@ -45,23 +67,10 @@ function loadStoredNotes(notes) {
 		let key = keys[i];
 		let note = notes[key];
 
-		//get formated date
-		let dateString = "";
-		let date = toDateTime(key);
-		if (date.toDateString() == currentDate.toDateString())
-			dateString = formatAMPM(date);
-		else
-			dateString =
-				days[date.getDay()] +
-				" " +
-				months[date.getMonth()] +
-				" " +
-				date.getDate();
-
 		//display date as title
 		let title = document.createElement("h1");
 		title.classList = "title storedNoteTitle";
-		title.innerHTML = dateString;
+		title.innerHTML = formatDate(key, currentDate);
 		div.appendChild(title);
 
 		//create div for new quill element
@@ -111,3 +120,13 @@ function formatAMPM(date) {
 	var strTime = hours + ":" + minutes + " " + ampm;
 	return strTime;
 }
+
+Date.prototype.getWeekNumber = function () {
+	var d = new Date(
+		Date.UTC(this.getFullYear(), this.getMonth(), this.getDate())
+	);
+	var dayNum = d.getUTCDay() || 7;
+	d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+	var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+	return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+};
