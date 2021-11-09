@@ -27,7 +27,8 @@ function loadListeners() {
 function main() {
 	chrome.storage.sync.get(["currentNote", "previousNotes"], function (items) {
 		previousNotes = items.previousNotes ? items.previousNotes : {}; //load previously saved notes
-		loadStoredNotes(previousNotes);
+		if (Object.keys(previousNotes).length > 0) loadStoredNotes(previousNotes);
+		else document.getElementById("storedNotes").hidden = true;
 
 		loadQuill(items.currentNote);
 		loadListeners();

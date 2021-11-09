@@ -32,7 +32,7 @@ body {
 	margin-bottom: 5px;
 
 	padding: 5px 10px 3px 10px;
-	background-color: #fb7272;
+	background-color: rgb(251, 114, 114);
 	color: white;
 	font-size: 20px;
 	border: none;
@@ -41,17 +41,17 @@ body {
 
 #submitButton:hover {
 	cursor: pointer;
+	background-color: rgb(241, 104, 104);
 }
 
 #submitButton:active {
 	background-color: rgb(231, 94, 94);
-	border: black solid 1px;
 }
 
 #storedNotes {
 	overflow-y: scroll;
 	max-height: 339px;
-	padding: 0px 5px;
+	padding: 2px 5px 0px 5px;
 	border: solid 1px #ccc;
 	margin: 3px;
 	border-radius: 10px;
