@@ -94,7 +94,7 @@ function loadStoredNotes(notes) {
 		});
 
 		//note style stuff
-		storedNote.container.style.margin = "5px";
+		storedNote.container.style.margin = "0px 5px";
 		storedNote.container.style.border = "none";
 		storedNote.insertText(0, note.note.trim());
 	}

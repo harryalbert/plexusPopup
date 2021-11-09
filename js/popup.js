@@ -19,7 +19,7 @@ function loadListeners() {
 	};
 
 	document.onkeydown = (e) => {
-		if (e.code == "Space" && e.ctrlKey) storeCurrentNote(quill.getText());
+		if (e.code == "Enter" && e.ctrlKey) storeCurrentNote(quill.getText());
 	};
 }
 
