@@ -6,14 +6,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="popup.css" />
 
+		<!-- Import font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
 		<!-- Include the Quill library -->
 		<link href="quill.css" rel="stylesheet" />
 		<script src="js/quill.js"></script>
 	</head>
 	<body>
-		<h1 id="plexusTitle" class="title">Plexus</h1>
 		<div id="editor"></div>
 		<button id="submitButton" class="horizontalAlign">Submit</button>
+		<hr class="horizontalLine">
 		<div id="storedNotes"></div>
 
 		<script src="js/storageMethods.js"></script>

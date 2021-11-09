@@ -2,7 +2,7 @@
 function loadQuill(note) {
 	quill = new Quill("#editor", {
 		theme: "snow",
-		placeholder: "Jot down some notes...",
+		placeholder: "Write something...",
 		modules: {
 			toolbar: false,
 		},
@@ -24,13 +24,13 @@ function loadStoredNotes(notes) {
 		let key = keys[i];
 		let note = notes[key];
 
+		//get formated date
 		let dateString = "";
 		let date = toDateTime(key);
-		console.log(date);
-
 		if (date.toDateString() == currentDate.toDateString()) dateString = formatAMPM(date);
 		else dateString = days[date.getDay()] + " " + months[date.getMonth()] + " " + date.getDate();
 
+		//display date as title
 		let title = document.createElement("h1");
 		title.classList = "title storedNoteTitle";
 		title.innerHTML = dateString;
@@ -41,6 +41,10 @@ function loadStoredNotes(notes) {
 		newEditor.id = key;
 		div.appendChild(newEditor);
 
+		let horizontalLine = document.createElement("hr");
+		horizontalLine.className = "horizontalLine";
+		div.appendChild(horizontalLine)
+
 		//create new quill editor within div
 		let storedNote = new Quill(document.getElementById(key), {
 			theme: "snow",
@@ -50,7 +54,9 @@ function loadStoredNotes(notes) {
 			readOnly: true,
 		});
 
+		//note style stuff
 		storedNote.container.style.margin = "5px";
+		storedNote.container.style.border = "none";
 		storedNote.insertText(0, note.note.trim());
 	}
 }
