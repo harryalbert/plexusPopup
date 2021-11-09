@@ -41,7 +41,7 @@ function formatDate(key, currentDate) {
 	let dateString = "";
 	let date = toDateTime(key);
 	if (date.toDateString() == currentDate.toDateString())
-		dateString = formatAMPM(date);
+		dateString = "today " + formatAMPM(date);
 	else if (
 		date.getYear() == currentDate.getYear() &&
 		date.getWeekNumber() == currentDate.getWeekNumber()
