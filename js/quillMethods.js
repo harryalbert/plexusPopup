@@ -41,12 +41,12 @@ function formatDate(key, currentDate) {
 	let dateString = "";
 	let date = toDateTime(key);
 	if (date.toDateString() == currentDate.toDateString())
-		dateString = "today " + formatAMPM(date);
+		dateString = "today at " + formatAMPM(date);
 	else if (
 		date.getYear() == currentDate.getYear() &&
 		date.getWeekNumber() == currentDate.getWeekNumber()
 	) {
-		dateString = days[date.getDay()] + " " + formatAMPM(date);
+		dateString = days[date.getDay()]
 	} else
 		dateString =
 			days[date.getDay()] +
