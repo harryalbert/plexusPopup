@@ -2,7 +2,6 @@
 .ql-container {
 	overflow: auto;
 	max-height: 200px;
-	width: 98% !important;
 }
 
 .ql-editor {

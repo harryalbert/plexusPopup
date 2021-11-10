@@ -13,11 +13,17 @@ body {
 	margin: 5px 0px !important;
 }
 
+#topContainer {
+	border: solid 1px #ccc;
+	margin: 3px;
+	border-radius: 10px;
+}
+
 #editor {
 	padding: 10px !important;
-	margin-left: 4px !important;
-	border-radius: 10px;
+	border: none;
 	height: 200px;
+	width: 100%;
 }
 
 #submitButton {

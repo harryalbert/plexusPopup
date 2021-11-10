@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<title>Plexus Notes</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="popup.css" />
-		<link rel="stylesheet" href="customQuill.css" />
+		<link rel="stylesheet" href="css/popup.css" />
+		<link rel="stylesheet" href="css/customQuill.css" />
 
 		<!-- Import font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,14 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
 		<!-- Include the Quill library -->
-		<link href="quill.css" rel="stylesheet" />
+		<link href="css/quill.css" rel="stylesheet" />
 		<script src="js/quill.js"></script>
 	</head>
 	<body>
-		<div id="editor"></div>
-		<button id="submitButton" class="horizontalAlign">Submit</button>
+		<div id="topContainer">
+			<div id="editor"></div>
+			<button id="submitButton" class="horizontalAlign">Submit</button>
+		</div>
 		<div id="storedNotesContainer"></div>
 
 		<script src="js/dateMethods.js"></script>

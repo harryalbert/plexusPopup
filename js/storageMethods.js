@@ -19,6 +19,6 @@ async function storeCurrentNote(note) {
 		previousNotes[(Date.now() / 1000) | 0] = {note: note, url: url};
 
 		chrome.storage.sync.set({previousNotes}, () => {});
-		// window.close();
+		window.close();
 	});
 }
