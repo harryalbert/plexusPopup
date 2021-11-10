@@ -38,7 +38,7 @@ function formatDate(key, currentDate) {
 }
 
 function loadStoredNotes(notes) {
-	let div = document.getElementById("storedNotes");
+	let div = document.getElementById("storedNotesContainer");
 	let currentDate = new Date();
 
 	const keys = Object.keys(notes);

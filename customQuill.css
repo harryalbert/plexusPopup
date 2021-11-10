@@ -1,0 +1,14 @@
+/******* Custom quill css *******/
+.ql-container {
+	overflow: auto;
+	max-height: 200px;
+	width: 98% !important;
+}
+
+.ql-editor {
+	padding: 0px !important;
+}
+
+.ql-editor.ql-blank::before {
+	left: 12px !important;
+}
