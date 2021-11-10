@@ -9,33 +9,12 @@ function loadQuill(note) {
 	});
 
 	quill.container.style.height = "200px";
-	quill.container.style.padding = "12px 0px";
+	// quill.container.style.padding = "12px 0px";
 	if (note) quill.insertText(0, note.trim());
 }
 
-const days = [
-	"Sunday",
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday",
-];
-const months = [
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"October",
-	"November",
-	"December",
-];
+const days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", ];
+const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ];
 function formatDate(key, currentDate) {
 	//get formated date
 	let dateString = "";
@@ -70,7 +49,10 @@ function loadStoredNotes(notes) {
 		//display date as title
 		let title = document.createElement("h1");
 		title.classList = "title storedNoteTitle";
-		title.innerHTML = formatDate(key, currentDate);
+
+		let inner = formatDate(key, currentDate);
+		if (note.url) inner += " - " + note.url;
+		title.innerHTML = inner;
 		div.appendChild(title);
 
 		//create div for new quill element

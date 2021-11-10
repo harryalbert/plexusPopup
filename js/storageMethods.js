@@ -10,22 +10,21 @@ async function storeCurrentNote(note) {
 	await saveCurrentNote(""); //clear quill editor
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, (tabs) => {
 		//get current url (if it exists)
+		console.log(tabs[0]);
+		console.log(Object.keys(tabs).length)
+
 		let url;
-		if (tabs.length > 0) tabs[0].hasOwnProperty("url") ? tabs[0].url : null;
-		else url = null;
+		if (Object.keys(tabs).length > 0) {
+			url = tabs[0].title;
+		} else url = null;
 
 		//using current seconds as key for note
 		previousNotes[(Date.now() / 1000) | 0] = {note: note, url: url};
 
-		//make sure keys don't overflow
-		// const keys = Object.keys(previousNotes);
-		// if (keys.length > maxStoredNotes){
-		// 	for (let i = 0; i < keys.length - maxStoredNotes; i++){
-		// 		delete previousNotes[keys[i]];
-		// 	}
-		// }
+		console.log(url);
+		console.log(previousNotes);
 
 		chrome.storage.sync.set({previousNotes}, () => {});
-		window.close();
+		// window.close();
 	});
 }
