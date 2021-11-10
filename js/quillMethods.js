@@ -33,14 +33,15 @@ function displayStoredNotes(notes) {
 		//create div for new quill element
 		let newEditor = document.createElement("div");
 		newEditor.id = key;
+		newEditor.className = "storedNote";
 		div.appendChild(newEditor);
 
 		//add horizontal line under note to differentiate notes
-		if (i > 0) {
-			let horizontalLine = document.createElement("hr");
-			horizontalLine.className = "horizontalLine";
-			div.appendChild(horizontalLine);
-		}
+		// if (i > 0) {
+		// 	let horizontalLine = document.createElement("hr");
+		// 	horizontalLine.className = "horizontalLine";
+		// 	div.appendChild(horizontalLine);
+		// }
 
 		//create new (read only) quill editor within div
 		let storedNote = new Quill(document.getElementById(key), {

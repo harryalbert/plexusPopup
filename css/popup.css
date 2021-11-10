@@ -67,8 +67,12 @@ body {
 }
 
 .storedNoteContainer {
-	margin: 0px 5px !important;
+	margin: 0px 5px 7px 5px!important;
 	border: none !important;
+}
+
+.storedNote {
+	margin-bottom: 5px;
 }
 
 .horizontalLine {
