@@ -1,7 +1,7 @@
 /* maxWith 800, maxHeight 600 */
 
 * {
-	font-family: "Open Sans", sans-serif !important;
+	font-family: Century !important;
 }
 
 html {
@@ -24,11 +24,13 @@ body {
 	border: none;
 	height: 200px;
 	width: 100%;
+	font-size: 19px !important;
+
 }
 
 #submitButton {
 	margin-top: 5px;
-	margin-left: 39%;
+	margin-left: 29%;
 	margin-bottom: 5px;
 
 	padding: 5px 10px 3px 10px;
@@ -62,7 +64,7 @@ body {
 	padding-left: 5px;
 
 	margin-top: 0px;
-	font-size: 12px;
+	font-size: 11px;
 	margin-bottom: 0px;
 }
 
@@ -73,6 +75,8 @@ body {
 
 .storedNote {
 	margin-bottom: 5px;
+	font-size: 19px !important;
+	color: #444444;
 }
 
 .horizontalLine {

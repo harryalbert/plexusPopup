@@ -2,7 +2,7 @@
 function loadQuill(note) {
 	quill = new Quill("#editor", {
 		theme: "snow",
-		placeholder: "Write something...",
+		placeholder: "write something...",
 		modules: {
 			toolbar: false,
 		},
