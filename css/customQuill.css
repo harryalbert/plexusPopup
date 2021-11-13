@@ -1,7 +1,6 @@
 /******* Custom quill css *******/
 .ql-container {
 	overflow: auto;
-	max-height: 200px;
 }
 
 .ql-editor {

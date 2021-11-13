@@ -36,5 +36,5 @@
 		"32": "plexus_favicon.png",
 		"16": "plexus_favicon.png"
 	},
-	"permissions": ["storage", "tabs"]
+	"permissions": ["storage", "tabs", "<all_urls>"]
 }

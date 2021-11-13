@@ -6,7 +6,7 @@
 
 html {
 	width: 400px;
-	height: 600px;
+	height: 599px;
 }
 
 body {
@@ -23,6 +23,7 @@ body {
 	padding: 10px !important;
 	border: none;
 	height: 200px;
+	max-height: 200px;
 	width: 100%;
 	font-size: 19px !important;
 }
