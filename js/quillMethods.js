@@ -8,6 +8,7 @@ function loadQuill(note) {
 		},
 	});
 
+	quill.container.children[0].focus();
 	if (note) quill.insertText(0, note.trim());
 }
 
@@ -35,13 +36,6 @@ function displayStoredNotes(notes) {
 		newEditor.id = key;
 		newEditor.className = "storedNote";
 		div.appendChild(newEditor);
-
-		//add horizontal line under note to differentiate notes
-		// if (i > 0) {
-		// 	let horizontalLine = document.createElement("hr");
-		// 	horizontalLine.className = "horizontalLine";
-		// 	div.appendChild(horizontalLine);
-		// }
 
 		//create new (read only) quill editor within div
 		let storedNote = new Quill(document.getElementById(key), {
