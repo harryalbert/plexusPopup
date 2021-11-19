@@ -54,7 +54,7 @@ body {
 
 #storedNotesContainer {
 	overflow-y: scroll;
-	max-height: 248px;
+	max-height: 240px;
 	padding: 2px 5px 0px 5px;
 	border: none;
 	margin: 3px;
